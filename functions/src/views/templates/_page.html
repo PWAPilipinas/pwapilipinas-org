@@ -1,0 +1,85 @@
+<!Doctype html>
+<html lang="en">
+    <head>
+      <base href="/pwa-pilipinas/us-central1/site/">
+      <link rel="icon" href="assets/images/favicon.ico">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      {% if _title %}
+      <title>{{ _title }} - PWA Pilipinas</title>
+      {% else %}
+      <title>PWA Pilipinas</title>
+      {% endif %}
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+      </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      {% block head %}
+      {% endblock %}
+    </head>
+    <body>
+      <nav class="white z-depth-0">
+        <div style="margin-left: 5%;">
+          <a class="brand-logo grey-text text-darken-2" href="/">
+            <img src="assets/images/logo_color.svg" style="width: 70px; padding-top: 12px;">
+          </a>
+          <ul id="nav-mobile" class="right hide-on-small-only">
+            <li class="yellow darken-1"><a href="https://app.pwapilipinas.org" class="black-text" style="font-weight: bold;">Open PWA Pilipinas App</a></li>
+          </ul>
+          <ul id="nav-mobile" class="right hide-on-med-and-up">
+            <li class="yellow darken-1"><a href="https://app.pwapilipinas.org" class="black-text" style="font-weight: bold;">Open App</a></li>
+          </ul>
+        </div>
+      </nav>
+    
+      <div style="min-height: 70vh; margin-bottom: 50px;">
+          {% block body %}
+          {% endblock %}    
+      </div>
+
+      <footer class="page-footer blue darken-2">
+          <div class="container">
+              <div class="row">
+                  <div class="col l6 s12">
+                    <h5 class="white-text">PWA Pilipinas</h5>
+                    <p class="grey-text text-lighten-4">
+                      The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines.
+                    </p>
+                  </div>
+                  <div class="col l4 s12">
+                    <h5 class="white-text">Social Media</h5>
+                    <ul>
+                      <li><a class="grey-text text-lighten-3" href="https://fb.com/PWAPilipinas" title="Visit our Facebook Page">Facebook</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://twitter.com/PWAPilipinas" title="Visit our Twitter Profile">Twitter</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://linkedin.com/company/PWA-Pilipinas" title="Visit our LinkedIn Account">LinkedIn</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/channel/UCGnUqjlvx0Kt-tOL5TYBj1A" title="Visit our YouTube Channel">YouTube</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://instagram.com/pwapilipinas" title="Visit our Instagram Account">Instagram</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://github.com/pwapilipinas" title="Visit our Github Account">GitHub</a></li>
+                    </ul>
+                  </div>
+                  <div class="col l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                      <li><a class="grey-text text-lighten-3" href="code-of-conduct" title="Read our Code of Conduct">Code of Conduct</a></li>
+                      <li><a class="grey-text text-lighten-3" href="privacy-policy" title="Read our Privacy Policy">Privacy Policy</a></li>
+                      <li><a class="grey-text text-lighten-3" href="mailto:hi@pwapilipinas.org" title="Send us an Email">E-Mail</a></li>
+                      <li><a class="grey-text text-lighten-3" href="https://team.pwapilipinas.org" title="Visit Team PWA Pilipinas Login">Team PWA Pilipinas</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-copyright">
+                <div class="container">
+                © 2020 PWA Pilipinas
+                <a class="grey-text text-lighten-4 right" href="https://app.pwapilipinas.org" target="_blank" title="Launch our App">Launch App</a>
+              </div>
+          </div>
+      </footer>
+    </body>
+</html>

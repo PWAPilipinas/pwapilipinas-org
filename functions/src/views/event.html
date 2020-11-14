@@ -1,0 +1,115 @@
+{% set _title = title %}
+{% extends "templates/_page.html" %}
+
+{% block _appCTA %}
+<ul id="nav-mobile" class="right">
+    <li class="yellow darken-1"><a href="https://app.pwapilipinas.org/event/{{id}}" class="black-text" style="font-weight: bold;">Open in App</a></li>
+</ul>
+{% endblock %}
+
+{% block head %}
+<meta name="description" content="{{descriptionHeader}}" />
+<meta property="og:url" content="https://pwapilipinas.org/event/{{id}}" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{title}}" />
+<meta property="og:description" content="{{descriptionHeader}}" />
+<meta property="og:image" content="{{coverUrl}}" />
+<style>
+    .brand {
+        height: 600px !important;
+        width: 100% !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: gainsboro;
+    }
+    .organization {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+
+    .date {
+        font-weight: 900;
+        color: #ECB800;
+        font-size: 30pt;
+    }
+
+    .button_container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    button.primary {
+        background-color: #ECB800;
+        padding: 15px;
+        border: 0;
+        border-radius: 12px;
+        font-size: 12pt;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button.primary:hover {
+        filter: brightness(90%);
+    }
+
+    button.primary:focus {
+        outline: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div>
+        <center>
+            <img src="{{coverUrl}}" width="100%">
+        </center>
+        <h5 style="font-weight: bold;">{{title}}</h5>
+        <div style="margin-top: 50px;">
+            <div style="display: flex;">
+                <div style="margin-right: 30px; text-align: center;">
+                    <span>{{month}}</span><br>
+                    <span class="date">{{day}}</span>
+                </div>
+                <div>
+                    <span style="display: flex; align-items: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                            <path d="M12 2C6.486 2 2 6.486 2 12C2 17.514 6.486 22 12 22C17.514 22 22 17.514 22 12C22 6.486 17.514 2 12 2ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20Z" fill="black"/>
+                            <path d="M13 7H11V12.414L14.293 15.707L15.707 14.293L13 11.586V7Z" fill="black"/>
+                        </svg>
+                        {{startTime}} - {{endTime}}
+                    </span>
+                    <span style="display: flex; align-items: center;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                            <path d="M12 14C14.206 14 16 12.206 16 10C16 7.794 14.206 6 12 6C9.794 6 8 7.794 8 10C8 12.206 9.794 14 12 14ZM12 8C13.103 8 14 8.897 14 10C14 11.103 13.103 12 12 12C10.897 12 10 11.103 10 10C10 8.897 10.897 8 12 8Z" fill="black"/>
+                            <path d="M11.4201 21.814C11.5893 21.9349 11.7921 21.9998 12.0001 21.9998C12.2081 21.9998 12.4108 21.9349 12.5801 21.814C12.8841 21.599 20.0291 16.44 20.0001 10C20.0001 5.589 16.4111 2 12.0001 2C7.58909 2 4.00009 5.589 4.00009 9.995C3.97109 16.44 11.1161 21.599 11.4201 21.814ZM12.0001 4C15.3091 4 18.0001 6.691 18.0001 10.005C18.0211 14.443 13.6121 18.428 12.0001 19.735C10.3891 18.427 5.97909 14.441 6.00009 10C6.00009 6.691 8.69109 4 12.0001 4Z" fill="black"/>
+                        </svg>
+                        {{venue}}                            
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="button_container">
+            <button class="primary" onclick="window.location.replace('https://app.pwapilipinas.org/event/{{id}}')">
+                Open in PWA Pilipinas App
+            </button>
+        </div>
+
+        <div class="organization" style="margin-top: 40px;">
+            <div style="margin-right: 20px;">
+                <img style="width: 50px;" src="{{organization.logoUrl}}">
+            </div>
+            <div style="text-align: left;">
+                <span style="font-size: 10pt; color: grey;">Organized by</span><br>
+                <span>{{organization.name}}</span>
+            </div>
+        </div>
+
+        <div style="white-space: pre-wrap; margin-top: 50px;">{{description | safe}}</div>
+    </div>
+</div>
+{% endblock %}
