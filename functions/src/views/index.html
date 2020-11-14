@@ -1,6 +1,12 @@
 {% extends "templates/_page.html" %}
 
 {% block head %}
+<meta name="description" content="The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines." />
+<meta property="og:url" content="https://pwapilipinas.org" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PWA Pilipinas" />
+<meta property="og:description" content="The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines." />
+<meta property="og:image" content="https://pwapilipinas.org/assets/images/community.jpg" />
 <style>
     .jumbotron { height: auto !important; }
 
@@ -35,7 +41,7 @@
 </div>
 
 <div class="container" style="margin-top: 30px;">
-    <div class="row" style="width: 100%; display: flex;">
+    <div class="row hide-on-small-only" style="width: 100%; display: flex;">
         <div class="col s6">
             <h4 style="font-weight: bold" class="blue-text text-darken-2">
                 The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines.
@@ -43,6 +49,13 @@
         </div>
         <div class="col s6" style="display: flex; align-items: center; justify-content: center;">
             <img src="assets/images/logo_color.svg" style="width: 200px;">
+        </div>
+    </div>
+    <div class="row hide-on-med-and-up">
+        <div class="col s12">
+            <h4 style="font-weight: bold; text-align: center;" class="blue-text text-darken-2">
+                The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines.
+            </h4>
         </div>
     </div>
 </div>

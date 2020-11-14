@@ -6,7 +6,7 @@
     ]
   },
   "hosting": {
-    "public": "",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -18,8 +18,5 @@
         "function": "site"
       }
     ]
-  },
-  "remoteconfig": {
-    "template": "remoteconfig.template.json"
   }
 }

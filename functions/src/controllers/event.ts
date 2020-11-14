@@ -1,9 +1,8 @@
 import * as admin from 'firebase-admin';
 import * as stripHtml from 'string-strip-html';
-admin.initializeApp();
-const db = admin.firestore();
 
 exports.eventController = async (req: any, res: any) => {
+    const db = admin.firestore();
     if(req.params.id) {
         const documentRef = await db.collection('events').doc(req.params.id).get();
         if(documentRef.exists) {

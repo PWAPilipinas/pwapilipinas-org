@@ -8,10 +8,12 @@ import * as functions from 'firebase-functions';
 import * as express from 'express';
 import * as nunjucks from 'nunjucks';
 import * as cors from 'cors';
+import * as admin from 'firebase-admin';
+
 const { injectRoutes } = require('./helpers/route');
 const { controllers } =  require('./controllers');
-// import * as stripHtml from 'string-strip-html';
 
+admin.initializeApp();
 const app = express();
 
 // Setup templating engine
@@ -25,6 +27,7 @@ app.use('/assets', express.static('src/assets'));
 const routes: Array<RouteObject> = [
     { path: '/', template: 'index.html' },
     { path: '/event/:id', handler: controllers.eventController },
+    { path: '/resource/:name', handler: controllers.resourceController },
     { path: '/code-of-conduct', template: 'codeofconduct.html' },
     { path: '/privacy-policy', template: 'privacypolicy.html' },
     { path: '*', template: '404.html' } // always keep this last
