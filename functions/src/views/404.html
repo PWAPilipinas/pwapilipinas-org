@@ -1,6 +1,15 @@
 {% set _title = "Not Found" %}
 {% extends "templates/_page.html" %}
 
+{% block head %}
+<meta name="description" content="The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines." />
+<meta property="og:url" content="https://pwapilipinas.org" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="PWA Pilipinas" />
+<meta property="og:description" content="The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines." />
+<meta property="og:image" content="https://pwapilipinas.org/assets/images/app-cover.png" />
+{% endblock %}
+
 {% block body %}
 <div class="container">
     <div>

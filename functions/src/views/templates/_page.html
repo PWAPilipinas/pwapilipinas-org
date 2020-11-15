@@ -1,3 +1,33 @@
+{%
+  set _socMed = [
+    { title: "Facebook", url: "https://fb.com/PWAPilipinas", tooltip: "Visit our Facebook Page" },
+    { title: "Twitter", url: "https://twitter.com/PWAPilipinas", tooltip: "Visit our Twitter Profile" },
+    { title: "LinkedIn", url: "https://linkedin.com/company/PWA-Pilipinas", tooltip: "Visit our LinkedIn Account" },
+    { title: "YouTube", url: "https://www.youtube.com/channel/UCGnUqjlvx0Kt-tOL5TYBj1A", tooltip: "Visit our YouTube Channel" },
+    { title: "Instagram", url: "https://instagram.com/pwapilipinas", tooltip: "Visit our Instagram Account" },
+    { title: "GitHub", url: "https://github.com/pwapilipinas", tooltip: "Visit our Github Account" }
+  ]
+%}
+{%
+  set _footerLinks = [
+    { title: "Code of Conduct", url: "/code-of-conduct", tooltip: "Read our Code of Conduct" },
+    { title: "Privacy Policy", url: "/privacy-policy", tooltip: "Read our Privacy Policy" },
+    { title: "E-mail", url: "mailto:hi@pwapilipinas.org", tooltip: "Send us an Email" },
+    { title: "Team PWA Pilipinas", url: "https://team.pwapilipinas.org", tooltip: "Visit Team PWA Pilipinas Login" }
+  ]  
+%}
+
+<!--
+  PWA Pilipinas
+  2020
+
+  All Rights Reserved.
+
+  PWA Pilipinas is a community organization for Progressive Web App designers,
+  developers and enthusiasts in the Philippines.
+
+  For questions, please send us an e-mail at hi@pwapilipinas.org
+-->
 <!Doctype html>
 <html lang="en">
     <head>
@@ -10,6 +40,14 @@
       {% else %}
       <title>PWA Pilipinas</title>
       {% endif %}
+      <meta name="theme-color" content="#ECB800">
+      <link rel="apple-touch-icon" sizes="128x128" href="/assets/icons/icon-128x128.png">
+      <script>
+        console.warn(
+          "%c\n\nPWA Pilipinas\n\nThis is meant for developer's use only. If someone told you to access this tool, they might be able to gain access to your account and steal personal information.\n\nE-mail us at data-privacy@pwapilipinas.org to report any data privacy incidents.",
+          "color: red !important, padding-left: 2%; font-size: x-large; text-align: center;"
+        )
+      </script>
       <style>
           * {
               margin: 0;
@@ -54,21 +92,17 @@
                   <div class="col l4 s12">
                     <h5 class="white-text">Social Media</h5>
                     <ul>
-                      <li><a class="grey-text text-lighten-3" href="https://fb.com/PWAPilipinas" title="Visit our Facebook Page">Facebook</a></li>
-                      <li><a class="grey-text text-lighten-3" href="https://twitter.com/PWAPilipinas" title="Visit our Twitter Profile">Twitter</a></li>
-                      <li><a class="grey-text text-lighten-3" href="https://linkedin.com/company/PWA-Pilipinas" title="Visit our LinkedIn Account">LinkedIn</a></li>
-                      <li><a class="grey-text text-lighten-3" href="https://www.youtube.com/channel/UCGnUqjlvx0Kt-tOL5TYBj1A" title="Visit our YouTube Channel">YouTube</a></li>
-                      <li><a class="grey-text text-lighten-3" href="https://instagram.com/pwapilipinas" title="Visit our Instagram Account">Instagram</a></li>
-                      <li><a class="grey-text text-lighten-3" href="https://github.com/pwapilipinas" title="Visit our Github Account">GitHub</a></li>
+                      {% for s in _socMed %}
+                      <li><a class="grey-text text-lighten-3" href="{{s.url}}" title="{{s.tooltip}}">{{s.title}}</a></li>
+                      {% endfor %}
                     </ul>
                   </div>
                   <div class="col l2 s12">
                     <h5 class="white-text">Links</h5>
                     <ul>
-                      <li><a class="grey-text text-lighten-3" href="/code-of-conduct" title="Read our Code of Conduct">Code of Conduct</a></li>
-                      <li><a class="grey-text text-lighten-3" href="/privacy-policy" title="Read our Privacy Policy">Privacy Policy</a></li>
-                      <li><a class="grey-text text-lighten-3" href="mailto:hi@pwapilipinas.org" title="Send us an Email">E-Mail</a></li>
-                      <li><a class="grey-text text-lighten-3" href="https://team.pwapilipinas.org" title="Visit Team PWA Pilipinas Login">Team PWA Pilipinas</a></li>
+                      {% for s in _footerLinks %}
+                      <li><a class="grey-text text-lighten-3" href="{{s.url}}" title="{{s.tooltip}}">{{s.title}}</a></li>
+                      {% endfor %}
                     </ul>
                   </div>
                 </div>
