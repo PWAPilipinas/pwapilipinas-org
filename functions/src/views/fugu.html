@@ -1,0 +1,177 @@
+{% set _title = 'Project Fugu: Reaching parity with native' %}
+{% extends "templates/_page.html" %}
+
+{% block head %}
+<meta name="description" content="Join us as Kenneth, co-inventor of PWA, give us an introduction about Project Fugu and give the latest and upcoming web capabilities we can take advantage of in our Progressive Web Apps." />
+<meta property="og:url" content="https://pwapilipinas.org/talk/fugu" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Project Fugu: Reaching parity with native by Kenneth Christiansen" />
+<meta property="og:description" content="Join us as Kenneth, co-inventor of PWA, give us an introduction about Project Fugu and give the latest and upcoming web capabilities we can take advantage of in our Progressive Web Apps." />
+<meta property="og:image" content="https://pwapilipinas.org/assets/talk/fugu/banner.png" />
+
+<style>
+    body {
+        background-color: #F2F2F2;
+    }
+    .brand {
+        height: 600px !important;
+        width: 100% !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        background-color: gainsboro;
+    }
+    .organization {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+        cursor: pointer;
+    }
+
+    a {
+        color: #0C3C90;
+    }
+
+    .date {
+        font-weight: 900;
+        color: #0C3C90;
+        font-size: 35pt;
+    }
+
+    .button_container {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 100%;
+        display: flex;
+    }
+
+    button.primary {
+        background-color: #0C3C90;
+        padding: 15px;
+        border: 0;
+        border-radius: 12px;
+        font-size: 12pt;
+        cursor: pointer;
+        width: 50%;
+        color: white;
+    }
+
+    button.secondary {
+        background-color: white;
+        padding: 15px;
+        border: 0;
+        border-radius: 12px;
+        font-size: 12pt;
+        cursor: pointer;
+        width: 50%;
+        color: #0C3C90;
+    }
+
+    button.primary:hover {
+        filter: brightness(90%);
+    }
+
+    button.primary:focus {
+        outline: none;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="hide-on-med-and-up">
+    <img src="/assets/talk/fugu/header.png" style="width: 100%;">
+</div>
+<div class="hide-on-small-only container">
+    <img src="/assets/talk/fugu/header.png" style="width: 100%;">
+</div>
+
+<div class="container">
+    <div style="margin-top: 50px;">
+        <div style="display: flex;">
+            <div style="margin-right: 30px; text-align: center;">
+                <span style="font-size: 1.2rem;">December</span><br>
+                <span class="date">9</span>
+            </div>
+            <div style="font-size: 1.2rem;">
+                <span style="display: flex; align-items: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                        <path d="M12 2C6.486 2 2 6.486 2 12C2 17.514 6.486 22 12 22C17.514 22 22 17.514 22 12C22 6.486 17.514 2 12 2ZM12 20C7.589 20 4 16.411 4 12C4 7.589 7.589 4 12 4C16.411 4 20 7.589 20 12C20 16.411 16.411 20 12 20Z" fill="black"/>
+                        <path d="M13 7H11V12.414L14.293 15.707L15.707 14.293L13 11.586V7Z" fill="black"/>
+                    </svg>
+                    4:00 PM PHT - 6:00 PM PHT
+                </span>
+                <span style="display: flex; align-items: center;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 10px;">
+                        <path d="M12 14C14.206 14 16 12.206 16 10C16 7.794 14.206 6 12 6C9.794 6 8 7.794 8 10C8 12.206 9.794 14 12 14ZM12 8C13.103 8 14 8.897 14 10C14 11.103 13.103 12 12 12C10.897 12 10 11.103 10 10C10 8.897 10.897 8 12 8Z" fill="black"/>
+                        <path d="M11.4201 21.814C11.5893 21.9349 11.7921 21.9998 12.0001 21.9998C12.2081 21.9998 12.4108 21.9349 12.5801 21.814C12.8841 21.599 20.0291 16.44 20.0001 10C20.0001 5.589 16.4111 2 12.0001 2C7.58909 2 4.00009 5.589 4.00009 9.995C3.97109 16.44 11.1161 21.599 11.4201 21.814ZM12.0001 4C15.3091 4 18.0001 6.691 18.0001 10.005C18.0211 14.443 13.6121 18.428 12.0001 19.735C10.3891 18.427 5.97909 14.441 6.00009 10C6.00009 6.691 8.69109 4 12.0001 4Z" fill="black"/>
+                    </svg>
+                    Facebook, Twitter & YouTube
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="button_container">
+        <button class="primary" onclick="window.location.replace('https://pwapilipinas.org/resource/fugu-registration')" style="margin-right: 10px;" title="Register for FREE">
+            <b>REGISTER</b>
+        </button>
+        <button class="secondary" onclick="shareEvent();" title="Share Event to Friends">
+            SHARE
+        </button>
+    </div>
+
+    <p style="font-size: 1.2rem; margin-bottom: 50px;">
+        Project Fugu is an initiative by companies like Google, Intel and Microsoft that aims to extend the web with native-like capabilities
+        like ability to access hardware APIs and storage in a safe manner that can be easily understood by users. Join us as Kenneth,
+        co-inventor of PWA, give us an introduction about Project Fugu and give the latest and upcoming web capabilities we can take advantage of in our Progressive Web Apps.<br>
+        <br>
+        We will be streaming live via <a href="https://fb.com/PWAPilipinas/live">Facebook</a>, on <a href="https://www.youtube.com/channel/UCGnUqjlvx0Kt-tOL5TYBj1A">YouTube</a>
+        and <a href="https://twitter.com/pwapilipinas">Twitter</a> and will be available on demand via <a href="https://app.pwapilipinas.org">PWA Pilipinas App</a>.<br>
+        <br>
+        The event is <b>FREE</b> and is open to the public but to know our audience better, please register with your details and possibly leave a question
+        so that we can ask it during the livestream.<br>
+        <br>
+        All speakers, attendees and volunteers are required to observe and follow the PWA Pilipinas Code of Conduct that you can read <a href="/code-of-conduct">here</a>.
+    </p>
+    
+    <h5>About Kenneth Christiansen</h5>
+    <p style="font-size: 1.2rem;">
+        Kenneth is a Danish software engineer and architect, specialized in mobile and web technology.
+        Working at Intel out of Copenhagen, Kenneth helps define Intel's strategy and plans regarding the Web platform,
+        as well as put it in action. Before joining Intel, Kenneth was employed by Nokia (Denmark and Brazil) where he
+        worked on the Nokia N9 web browser, Qt, WebKit, as well as many other mobile projects.<br>
+        <br>
+        Kenneth is an elected member of the W3C Technical Architect Group (TAG). Currently Working
+        on making Progressive Web Apps more capable as part of Project Fugu.<br><br>
+
+        <a href="https://github.com/kenchris">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+            </svg>
+            kenchris
+        </a><br>
+        <a href="https://twitter.com/kennethrohde">
+            <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M22.46,6C21.69,6.35 20.86,6.58 20,6.69C20.88,6.16 21.56,5.32 21.88,4.31C21.05,4.81 20.13,5.16 19.16,5.36C18.37,4.5 17.26,4 16,4C13.65,4 11.73,5.92 11.73,8.29C11.73,8.63 11.77,8.96 11.84,9.27C8.28,9.09 5.11,7.38 3,4.79C2.63,5.42 2.42,6.16 2.42,6.94C2.42,8.43 3.17,9.75 4.33,10.5C3.62,10.5 2.96,10.3 2.38,10C2.38,10 2.38,10 2.38,10.03C2.38,12.11 3.86,13.85 5.82,14.24C5.46,14.34 5.08,14.39 4.69,14.39C4.42,14.39 4.15,14.36 3.89,14.31C4.43,16 6,17.26 7.89,17.29C6.43,18.45 4.58,19.13 2.56,19.13C2.22,19.13 1.88,19.11 1.54,19.07C3.44,20.29 5.7,21 8.12,21C16,21 20.33,14.46 20.33,8.79C20.33,8.6 20.33,8.42 20.32,8.23C21.16,7.63 21.88,6.87 22.46,6Z" />
+            </svg>
+            kennethrohde
+        </a><br>
+    </p>
+</div>
+<script>
+    async function shareEvent() {
+        if(navigator.share) {
+            const data = {
+                title: 'Project Fugu: Reaching parity with native',
+                text: 'Attend Kenneth Christiansen\'s talk entitled Project Fugu: Reaching parity with native. Visit the link to learn more.',
+                url: 'https://pwapilipinas.org/talk/fugu'
+            };
+            const sharePromise = await navigator.share(data);
+        } else {
+            console.log('Share API is not supported');
+            window.open("https://www.facebook.com/sharer/sharer.php?u=https://pwapilipinas.org/talk/fugu", "pop", "width=600, height=400, scrollbars=no");
+        }
+        return;
+    }
+</script>
+{% endblock %}
