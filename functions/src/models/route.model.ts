@@ -3,4 +3,5 @@ interface RouteObject {
     path?: string;
     handler?: (arg0: any, arg1: any) => any;
     template?: string;
+    redirect?: string;
 };
