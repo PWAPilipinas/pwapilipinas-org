@@ -17,7 +17,7 @@
     "cors": "2.8.5",
     "express": "4.17.1",
     "firebase-admin": "8.13.0",
-    "firebase-functions": "3.13.0",
+    "firebase-functions": "3.13.1",
     "nunjucks": "3.2.2",
     "string-strip-html": "6.3.0"
   },
