@@ -19,7 +19,7 @@
     "firebase-admin": "8.13.0",
     "firebase-functions": "3.13.0",
     "nunjucks": "3.2.2",
-    "string-strip-html": "6.2.0"
+    "string-strip-html": "6.3.0"
   },
   "devDependencies": {
     "@types/cors": "2.8.9",
