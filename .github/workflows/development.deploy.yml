@@ -1,6 +1,7 @@
 name: Deploy to Development Env
 
 on:
+  workflow_dispatch:
   push:
     branches: [ development ]
 
