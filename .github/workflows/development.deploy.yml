@@ -6,9 +6,20 @@ on:
     branches: [ development ]
 
 jobs:
-  setup:
+  run_deployment:
     runs-on: ubuntu-latest
-    name: test
+    name: deployment
     steps:
-      - name: Echo Hello World
-        run: echo "Hello World"
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.1.4
+      - name: Install outside dependencies
+        run: npm install
+      - name: Install internal dependencies
+        run: cd functions && npm install && cd ../
+      - name: Build
+        run: echo 'Hello World'
+      - name: Deploy
+        env: 
+          FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
+        run: firebase deploy --only functions:site
+        
