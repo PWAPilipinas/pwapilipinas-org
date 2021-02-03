@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     name: deployment
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v2.1.4
+      - uses: actions/setup-node@v2.1.4
       - name: Install outside dependencies
         run: ls -a
