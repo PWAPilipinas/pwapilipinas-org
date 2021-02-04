@@ -20,4 +20,4 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN_PROD}}
         with:
-          args: deploy --only functions:site,hosting --project pwa-pilipinas
+          args: deploy --only functions:site,hosting
