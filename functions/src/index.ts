@@ -21,6 +21,7 @@ nunjucks.configure('src/views', { autoescape: true, express: app });
 
 // Middlewares
 app.use(cors({ origin: true }));
+// @ts-ignore
 app.use('/assets', express.static('src/assets'));
 
 injectRoutes(app, routes);

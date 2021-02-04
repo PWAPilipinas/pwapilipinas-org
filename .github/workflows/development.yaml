@@ -1,0 +1,23 @@
+name: Deploy to Firebase Dev
+on:
+  workflow_dispatch:
+  push:
+    branches: [development]
+
+jobs:
+  build_and_deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Files
+        uses: actions/checkout@master
+      - name: Setup Node JS
+        uses: actions/setup-node@v1
+      - name: Install Dependencies
+        run: npm install && cd functions && npm install && cd ../
+      - name: Deploy Firebase to Dev
+        uses: w9jds/firebase-action@master
+        env:
+          FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN_DEV}}
+        with:
+          args: deploy --only functions:site,hosting --project pwa-pilipinas-development
