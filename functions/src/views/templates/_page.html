@@ -49,40 +49,59 @@
         )
       </script>
       <style>
-          * { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
+          * { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; --primary: #ECB800 }
+          .parent-container-content {
+            display: flex;
+            justify-content: center;
+          }
+          @media (max-width: 799px) {
+            .parent-container > * {
+              padding-left: 5%;
+              padding-right: 5%;
+            }
+          }
       </style>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       {% block head %}
       {% endblock %}
     </head>
-    <body>
-      <nav class="white z-depth-0">
-        <div style="margin-left: 5%;">
-          <a class="brand-logo grey-text text-darken-2" href="/">
-            <img src="/assets/images/logo_color.svg" style="width: 70px; padding-top: 12px;">
-          </a>
-          <ul id="nav-mobile" class="right hide-on-small-only">
-            <li class="yellow darken-1"><a href="https://app.pwapilipinas.org" class="black-text" style="font-weight: bold;" target="_blank">Open PWA Pilipinas App</a></li>
-          </ul>
-          <ul id="nav-mobile" class="right hide-on-med-and-up">
-            <li class="yellow darken-1"><a href="https://app.pwapilipinas.org" class="black-text" style="font-weight: bold;" target="_blank">Open App</a></li>
-          </ul>
+    <body style="background-color: var(--primary);">
+
+      <nav class="z-depth-0 parent-container" style="background-color: transparent; border-bottom: 2px solid black; height: 100%;">
+        <div style="display: flex; align-items: center; justify-content: center;">
+
+          <div style="display: flex; width: 100%; align-items: center; justify-content: space-between; max-width: 800px;">
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <a class="grey-text text-darken-2" href="/" style="display: flex; align-items: center; justify-content: center;">
+                <img src="/assets/images/logo_black.svg" style="width: 70px;">
+              </a>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;">
+              <ul id="nav-mobile" class="hide-on-small-only">
+                <li class="transparent"><a href="https://app.pwapilipinas.org" class="black-text" style="font-weight: bold;" target="_blank">Open PWA Pilipinas App</a></li>
+              </ul>
+              <ul id="nav-mobile" class="hide-on-med-and-up">
+                <li class="transparent"><a href="https://app.pwapilipinas.org" class="black-text" style="font-weight: bold;" target="_blank">Open App</a></li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </nav>
     
-      <div style="min-height: 70vh; margin-bottom: 50px;">
+      <div style="min-height: 70vh; margin-bottom: 100px;">
           {% block body %}
           {% endblock %}    
       </div>
 
-      <footer class="page-footer blue darken-2">
+      <footer class="page-footer black">
           <div class="container">
               <div class="row">
                   <div class="col l6 s12" style="padding-top: 20px;">
                     <img src="/assets/images/logo_white.svg" style="width: 100px;">
                     <p class="grey-text text-lighten-4">
-                      The community organization for Progressive Web App enthusiasts, developers and designers in the Philippines.
+                      A community of Progressive Web App Enthusiasts & Developers in the Philippines.
                     </p>
                   </div>
                   <div class="col l4 s12">
@@ -105,10 +124,12 @@
               </div>
               <div class="footer-copyright">
                 <div class="container">
-                © 2020 Team PWA Pilipinas
+                © 2021 Team PWA Pilipinas
                 <a class="grey-text text-lighten-4 right" href="https://app.pwapilipinas.org" target="_blank" title="Launch our App">Open App</a>
               </div>
           </div>
       </footer>
     </body>
 </html>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">

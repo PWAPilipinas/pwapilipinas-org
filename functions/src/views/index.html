@@ -30,6 +30,29 @@
 {% endblock %}
 
 {% block body %}
+<div class="parent-container parent-container-content">
+    <div style="width: 100%; max-width: 800px; min-height: 500px; ">
+        <div>
+            <h1 style="font-size: 40pt; font-weight: bold;">
+                A Community of <span style="color: transparent; -webkit-text-stroke: 1px black;">Progressive Web App</span> Enthusiasts & Developers in the Philippines.
+            </h1>
+
+            <!-- Jumbotron for larger window and desktop -->
+            <div class="jumbotron hide-on-small-only">
+                <div class="jumboImage jumbo" style="filter: grayscale(100%); contrast(100%);"></div>
+            </div>
+
+            <!-- Jumbotron for mobile images and small windows -->
+            <div class="jumbotron-mobile hide-on-med-and-up">
+                <div class="jumboImage jumbo-mobile"  style="filter: grayscale(100%) contrast(100%);"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block body123 %}
 <!-- Jumbotron for larger window and desktop -->
 <div class="jumbotron hide-on-small-only">
     <div class="jumboImage jumbo"></div>
