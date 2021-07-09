@@ -1,1 +1,5 @@
-{}
+{
+  "devDependencies": {
+    "firebase-admin": "^9.10.0"
+  }
+}
