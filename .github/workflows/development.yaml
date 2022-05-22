@@ -13,10 +13,8 @@ jobs:
         uses: actions/checkout@master
       - name: Setup Node JS
         uses: actions/setup-node@v1
-      - name: Move to Server Folder
-        run: cd server
       - name: Install Dependencies
-        run: npm install && cd functions && npm install && cd ../
+        run: cd server && npm install && cd functions && npm install && cd ../
       - name: Deploy Firebase to Dev
         uses: w9jds/firebase-action@master
         env:
